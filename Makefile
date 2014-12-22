@@ -1,7 +1,7 @@
 
 generuoti:
-	pdflatex magistrinis.tex
+	xelatex magistrinis.tex
 	bibtex magistrinis
-	pdflatex magistrinis.tex
-	pdflatex magistrinis.tex
+	xelatex magistrinis.tex
+	xelatex magistrinis.tex
 	open magistrinis.pdf || xdg-open magistrinis.pdf

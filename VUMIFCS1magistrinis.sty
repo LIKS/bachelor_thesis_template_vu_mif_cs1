@@ -13,108 +13,20 @@
 
 % Magistro darbo apiforminimas pagal Vilniaus universiteto
 % Matematikos ir informatikos fakulteto Informatikos katedros reikalavimus
-\ProvidesPackage{VUMIFCS1magistrinis}[2015/01/01 1.0 VU MIF CS1 master thesis Style]
-
-\RequirePackage[T1]{fontenc}
-\RequirePackage{setspace}
-\setstretch{1.4}
-\sloppy  % Tolygiai paskirsto tekstą nuo kairės iki dešinės paraštės'
-\renewcommand\rmdefault{ptm} % Set plain text default font to Times New Roman
-
-% Titulinio puslapio pagrindinių eleemntų išdėstymas
-\DeclareOption{sedepttitle}{%
-  \def\@outputtitle{%
-  \begin{center}
-  \null\vfil
-  \vskip 2.5cm
-  {\singlespacing \LARGE \textbf{\@title} \par}
-  {\singlespacing \Large \textbf{\@titleineng} \par}%
-  \vskip 0.8cm
-  {\large \@vumifpaper}%
-  % {\@vumifpaper \par}%
-  % {\singlespacing \Large \textbf{\@title}\\ {\large(\@titleineng)}\par}
-  \end{center}
-  \@ifundefined{@secondauthor}{
-     \vskip 3cm
-     \begin{flushright}
-        \large
-        \singlespacing
-        % CS1 magistrinis
-        {\begin{tabular}[t]{l l}%
-        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
-        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
-        Recenzentas: &\; \@reviewer \hfill \@signatureplace
-          % & \smallskip Atliko: \@status \\
-          % & \medskip \@author \hfill \@signatureplace \\
-          % & \smallskip Darbo vadovas: \\
-          % & \medskip \@supervisor \hfill  \@signatureplace \\
-          % & \smallskip Recenzentas: \\
-          % & \@reviewer \hfill  \@signatureplace
-        \end{tabular} \par}%
-     \end{flushright}
-     \vskip 4cm
-   }{
-     \vskip 2.8cm
-     \begin{flushright}
-        \large
-        \singlespacing
-        {\begin{tabular}[t]{l l}%
-        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
-        \bigskip &\; \@secondauthor \hfill \@signatureplace \\
-        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
-        Recenzentas: &\; \@reviewer \hfill \@signatureplace
-        \end{tabular} \par}%
-     \end{flushright}
-     \vskip 3.8cm
-   }
-}}
-
-\ExecuteOptions{sedepttitle}
-
-\ProcessOptions
-
-% Papildoma informacija tituliniame puslapyje
-\newcommand{\vumifpaper}[1]{\def\@vumifpaper{#1}}
-\newcommand{\vumifdept}[1]{\def\@vumifdept{#1}}
-\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
-\newcommand{\reviewer}[1]{\def\@reviewer{#1}}
-\newcommand{\status}[1]{\def\@status{#1}}
-\newcommand{\titleineng}[1]{\def\@titleineng{#1}}
-\newcommand{\secondauthor}[1]{\def\@secondauthor{#1}}
-
-% Skyriaus pavadinimas, turinyje neturintis numerio
-\newcommand{\sectionnonum}[1]{%
-    \section*{#1}%
-    \addcontentsline{toc}{section}{#1}% 
-}
-
-% Skyriaus pavadinimas, neturintis numerio bei neįeinantis į turinį
-\newcommand{\sectionnonumnocontent}[1]{%
-    \section*{#1}%   Sugadina pirmojo šio tipo skyriaus numeravimą puslapiais
-}
-
-% Reikia lietuvybės patobulinimų
-\RequirePackage{LTPlius}
-
-% Lapo formato nurodymas, vėliau nurodysime ir paraštes
-\RequirePackage{vmargin}
+\ProvidesPackage{VUMIFCS1magistrinis}[2014/12/24 1.0 VU MIF CS1 master thesis style]
+\RequirePackage{LTPlius}  % Nustatymų sulietuvinimas
+\RequirePackage{fontspec} % Šrifto pasirinkimui
+\setmainfont{Palemonas}   % Teksto pagrindinis šriftas bus Palemonas
+\RequirePackage{setspace} % Intervalas tarp eilučių
+\RequirePackage{vmargin}  % Lapo paraštės
 \setmarginsrb{3cm}{2cm}{1.5cm}{1.5cm}{0pt}{14pt}{0pt}{5mm}
 \setpapersize[portrait]{A4}
-
-% Mums reikės 1,5 intervalo tarp eilučių
-\RequirePackage{setspace}
-
-% Keisime standartinius priklausomus nuo kalbos tekstus
-\RequirePackage[lithuanian]{babel}
-\RequirePackage[titles]{tocloft}
-\RequirePackage{etoolbox}
-
-% Pirmos eilutės paragrafe atitraukimas 0,7 cm
-\setlength{\parindent}{0.7cm}
-
-% Puslapio numerio vietos nustatymas
-\RequirePackage{fancyhdr}
+\sloppy  % Tolygiai paskirsto tekstą nuo kairės iki dešinės paraštės
+\RequirePackage[titles]{tocloft} % Turinio eilučių išlygiavimo nustatymui
+\RequirePackage{fancyhdr} % Puslapio numerio vietos nustatymui
 \pagestyle{fancy}
+
+% Nustatoma puslapio numerio vieta puslapyje
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \lhead{}
@@ -124,10 +36,24 @@
 \cfoot{}
 \rfoot{\thepage} % Numeris bus puslapio apačioje dešinėje
 
-% ---------------------------------------------------
-% Titulinis puslapis suformatuotas pagal VU MIF formą
-% ---------------------------------------------------
+% Informacijos tituliniame puslapyje kintamieji
+\newcommand{\university}[1]{\def\@university{#1}}
+\newcommand{\faculty}[1]{\def\@faculty{#1}}
+\newcommand{\vumifpaper}[1]{\def\@vumifpaper{#1}}
+\newcommand{\vumifdept}[1]{\def\@vumifdept{#1}}
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\reviewer}[1]{\def\@reviewer{#1}}
+\newcommand{\status}[1]{\def\@status{#1}}
+\newcommand{\titleineng}[1]{\def\@titleineng{#1}}
+\newcommand{\secondauthor}[1]{\def\@secondauthor{#1}}
 
+% Pirmos eilutės paragrafe atitraukimas 0,7 cm
+\setlength{\parindent}{0.7cm}
+
+
+% -------------------------------
+% Titulinio puslapio formatavimas
+% -------------------------------
 \newcommand{\@signatureplace}{%
     \parbox[t]{2.5cm}{%
         \makebox[2.5cm]{\raisebox{-0.5ex}{\scriptsize
@@ -146,20 +72,53 @@
     {Tituliniame puslapyje nenurodyta katedra (komanda \protect\vumifdept)}
   \vumifchecktitle{@supervisor}%
     {Tituliniame puslapyje nenurodytas darbo vadovas (komanda \protect\supervisor)}
-
+   ~
   \begin{center}
-          {\large VILNIAUS UNIVERSITETAS \\
-        MATEMATIKOS IR INFORMATIKOS FAKULTETAS \\
-            \MakeUppercase{\@vumifdept}\par }
+      {\setstretch{1.3}\large \MakeUppercase{\@university} \\
+          \MakeUppercase{\@faculty} \\
+         \MakeUppercase{\@vumifdept}\par }
+
+     \null\vfil
+     \vskip 2.5cm
+     {\singlespacing \LARGE \textbf{\@title} \par}
+     {\singlespacing \Large \textbf{\@titleineng} \par}%
+     \vskip 0.8cm
+     {\large \@vumifpaper}%
   \end{center}
-  \@outputtitle
+  \@ifundefined{@secondauthor}{
+     \vskip 3cm
+     \begin{flushright}
+        \large
+        \singlespacing
+        {\begin{tabular}[t]{l l}%
+        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
+        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
+        Recenzentas: &\; \@reviewer \hfill \@signatureplace
+        \end{tabular} \par}%
+     \end{flushright}
+     \vskip 4cm
+   }{
+     \vskip 2.8cm
+     \begin{flushright}
+        \large
+        \singlespacing
+        {\begin{tabular}[t]{l l}%
+        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
+        \bigskip &\; \@secondauthor \hfill \@signatureplace \\
+        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
+        Recenzentas: &\; \@reviewer \hfill \@signatureplace
+        \end{tabular} \par}%
+     \end{flushright}
+     \vskip 3.8cm
+   }
+
   \begin{center}
     {\singlespacing \@date \par}%   
   \end{center}\par
   \@thanks
   \vfil\null
   \end{titlepage}%
-  \setcounter{footnote}{0}%
+  % Atlaisviname panaudotus kintamuosius
   \global\let\@outputtitle\relax
   \global\let\thanks\relax
   \global\let\maketitle\relax
@@ -168,6 +127,8 @@
   \global\let\@author\@empty
   \global\let\@date\@empty
   \global\let\@title\@empty
+  \global\let\@university\@empty
+  \global\let\@faculty\@empty
   \global\let\@vumifdept\@empty
   \global\let\@vumifpaper\@empty
   \global\let\@supervisor\@empty
@@ -180,13 +141,23 @@
   \global\let\supervisor\relax
   \global\let\@signatureplace\relax
   \global\let\vumifchecktitle\relax
+  \setcounter{footnote}{0}%
   % Nustatome dokumentui 1,5 eilutės intervalą
   \onehalfspacing
 }
 
+% Skyriaus pavadinimas, turinyje neturintis numerio
+\newcommand{\sectionnonum}[1]{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}% 
+}
+
+% Skyriaus pavadinimas, neturintis numerio bei neįeinantis į turinį
+\newcommand{\sectionnonumnocontent}[1]{%
+    \section*{#1}%   Sugadina pirmojo šio tipo skyriaus numeravimą puslapiais
+}
 
 \renewcommand\tableofcontents{%
-    % \pagestyle{plain}%
     % Turinys su viengubu intervalu tarp eilučių
     \begin{singlespacing}%
         \section*{\rm\normalsize\centering\contentsname
@@ -227,18 +198,9 @@
     \cleardoublepage%
     \@startsection {section}{1}{\z@}%
         {-3.5ex \@plus -1ex \@minus -.2ex}%
-        {0.1ex \@plus.2ex}%
+        {2.3ex \@plus.2ex}%
         {\normalfont\Large\bfseries}%
 }
-
-% Puslapių numeravimas - warrning: remove this evil
-% \def\ps@plain{%
-%     \renewcommand{\@oddhead}{\hfill\textrm{\thepage}}%
-%     \renewcommand{\@evenhead}{\@oddhead}%
-%     \renewcommand{\@evenfoot}{}%
-%     \renewcommand{\@oddfoot}{}%
-% }
-
 
 % Priedo sekcijų formatavimas turiniui
 \renewcommand{\appendix}{%
@@ -307,10 +269,12 @@
 
 % Raktinių žodžių komandos
 \newcommand\keywords[1]{%
-    \bigskip \par
+    \par \bigskip \par
+    % \hangindent=\parindent   % Lygiavimas nuo antros eilutės
     \noindent \textbf{Keywords:}\; \textbf{#1}
 }
 \newcommand\raktiniaizodziai[1]{%
-    \bigskip \par
+    \par \bigskip \par
+    % \hangindent=\parindent   % Lygiavimas nuo antros eilutės
     \noindent \textbf{Raktiniai žodžiai:}\; \textbf{#1}
 }
