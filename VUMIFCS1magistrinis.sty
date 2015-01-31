@@ -16,7 +16,15 @@
 \ProvidesPackage{VUMIFCS1magistrinis}[2014/12/24 1.0 VU MIF CS1 master thesis style]
 \RequirePackage{LTPlius}  % Nustatymų sulietuvinimas
 \RequirePackage{fontspec} % Šrifto pasirinkimui
-\setmainfont{Palemonas}   % Teksto pagrindinis šriftas bus Palemonas
+\setmainfont[
+    Ligatures=TeX,
+    Extension=.otf,
+    UprightFont= *-regular,
+    BoldFont=*-bold,
+    ItalicFont=*-italic,
+    BoldItalicFont=*-bolditalic
+]{texgyretermes}  % Teksto  šrifatas bus Nimbus Roman No9 L, kuris yra
+                  % atviras Times New Roman šrifto atitikmuo
 \RequirePackage{setspace} % Intervalas tarp eilučių
 \RequirePackage{vmargin}  % Lapo paraštės
 \setmarginsrb{3cm}{2cm}{1.5cm}{1.5cm}{0pt}{14pt}{0pt}{5mm}
