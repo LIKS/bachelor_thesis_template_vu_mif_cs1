@@ -49,8 +49,8 @@
 % Informacijos tituliniame puslapyje kintamieji
 \newcommand{\university}[1]{\def\@university{#1}}
 \newcommand{\faculty}[1]{\def\@faculty{#1}}
-\newcommand{\vumifpaper}[1]{\def\@vumifpaper{#1}}
-\newcommand{\vumifdept}[1]{\def\@vumifdept{#1}}
+\newcommand{\papertype}[1]{\def\@papertype{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand{\reviewer}[1]{\def\@reviewer{#1}}
 \newcommand{\status}[1]{\def\@status{#1}}
@@ -70,7 +70,7 @@
         (para\v{s}as) }}}
 }
 
-\newcommand{\vumifchecktitle}[2]{%
+\newcommand{\checkifdefined}[2]{%
     % Patikriname, ar visa reikalinga informacija tituliniam puslapiui
     % buvo nurodyta. #1 yra tikrinama reikšmė (be \ priekyje),
     % #2 - klaidos pranešimas.
@@ -78,22 +78,22 @@
 }
 
 \renewcommand\maketitle{\begin{titlepage}%
-  \vumifchecktitle{@vumifdept}%
-    {Tituliniame puslapyje nenurodyta katedra (komanda \protect\vumifdept)}
-  \vumifchecktitle{@supervisor}%
+  \checkifdefined{@department}%
+    {Tituliniame puslapyje nenurodyta katedra (komanda \protect\department)}
+  \checkifdefined{@supervisor}%
     {Tituliniame puslapyje nenurodytas darbo vadovas (komanda \protect\supervisor)}
    ~
   \begin{center}
       {\setstretch{1.3}\large \MakeUppercase{\@university} \\
           \MakeUppercase{\@faculty} \\
-         \MakeUppercase{\@vumifdept}\par }
+         \MakeUppercase{\@department}\par }
 
      \null\vfil
      \vskip 2.5cm
      {\singlespacing \LARGE \textbf{\@title} \par}
      {\singlespacing \Large \textbf{\@titleineng} \par}%
      \vskip 0.8cm
-     {\large \@vumifpaper}%
+     {\large \@papertype}%
   \end{center}
   \@ifundefined{@secondauthor}{
      \vskip 3cm
@@ -139,18 +139,18 @@
   \global\let\@title\@empty
   \global\let\@university\@empty
   \global\let\@faculty\@empty
-  \global\let\@vumifdept\@empty
-  \global\let\@vumifpaper\@empty
+  \global\let\@department\@empty
+  \global\let\@papertype\@empty
   \global\let\@supervisor\@empty
   \global\let\@reviewer\@empty
   \global\let\title\relax
   \global\let\author\relax
   \global\let\date\relax
   \global\let\and\relax
-  \global\let\vumifdept\relax
+  \global\let\department\relax
   \global\let\supervisor\relax
   \global\let\@signatureplace\relax
-  \global\let\vumifchecktitle\relax
+  \global\let\checkifdefined\relax
   \setcounter{footnote}{0}%
   % Nustatome dokumentui 1,5 eilutės intervalą
   \onehalfspacing
