@@ -1,9 +1,9 @@
 generuoti:
-	xelatex magistrinis.tex
-	bibtex magistrinis
-	xelatex magistrinis.tex
-	xelatex magistrinis.tex
-	open magistrinis.pdf || xdg-open magistrinis.pdf
+	xelatex bakalaurinis.tex
+	bibtex bakalaurinis
+	xelatex bakalaurinis.tex
+	xelatex bakalaurinis.tex
+	open bakalaurinis.pdf || xdg-open bakalaurinis.pdf
 
 ubuntu:
 	echo "Diegiamas LaTeX (PdfLaTeX, XeTeX ir kt.)"

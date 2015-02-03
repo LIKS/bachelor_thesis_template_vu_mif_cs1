@@ -1,4 +1,4 @@
-%% VUMIFCS1magistrinis.cls – „Tik svajotojai-romantikai gali pagerinti nepakeičiamą pasaulį“
+%% VUMIFCS1bakalaurinis.cls – „Tik svajotojai-romantikai gali pagerinti nepakeičiamą pasaulį“
 %% Created by   Atviras Kodas Lietuvai  2015
 %
 %% Latest version available here: https://github.com/LIKS/course_work_template_mifcs1
@@ -11,10 +11,10 @@
 % link to the license, and indicate if changes were made.)
 
 
-% Magistro darbo apiforminimas pagal Vilniaus universiteto
+% Bakalauro darbo apiforminimas pagal Vilniaus universiteto
 % Matematikos ir informatikos fakulteto Informatikos katedros reikalavimus
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{VUMIFCS1magistrinis}[2015/02/03 1.0 VU MIF CS1 master thesis class]
+\ProvidesClass{VUMIFCS1bakalaurinis}[2015/02/03 1.0 VU MIF CS1 bachelor thesis class]
 \LoadClass[12pt, a4paper]{article}
 \RequirePackage{LTPlius}  % Nustatymų sulietuvinimas
 \RequirePackage{fontspec} % Šrifto pasirinkimui
