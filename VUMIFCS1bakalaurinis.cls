@@ -82,46 +82,46 @@
     {Tituliniame puslapyje nenurodyta katedra (komanda \protect\department)}
   \checkifdefined{@supervisor}%
     {Tituliniame puslapyje nenurodytas darbo vadovas (komanda \protect\supervisor)}
-   ~
-  \begin{center}
-      {\setstretch{1.3}\large \MakeUppercase{\@university} \\
-          \MakeUppercase{\@faculty} \\
-         \MakeUppercase{\@department}\par }
 
-     \null\vfil
-     \vskip 2.5cm
-     {\singlespacing \LARGE \textbf{\@title} \par}
-     {\singlespacing \Large \textbf{\@titleineng} \par}%
-     \vskip 0.8cm
-     {\large \@papertype}%
+  \begin{center}
+      {\singlespacing \MakeUppercase{\@university} \\
+                      \MakeUppercase{\@faculty} \\
+                      \MakeUppercase{\@department}\par }
+      \null\vfil
+      \vskip 3.4cm
+      {\@papertype \par}%
+      {\singlespacing \Large \textbf{\@title}\\ {\large(\@titleineng)}\par}
   \end{center}
   \@ifundefined{@secondauthor}{
-     \vskip 3cm
+     \vskip 4.9cm
      \begin{flushright}
-        \large
         \singlespacing
         {\begin{tabular}[t]{l l}%
-        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
-        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
-        Recenzentas: &\; \@reviewer \hfill \@signatureplace
+          & \smallskip Atliko: \@status \\
+          & \medskip \@author \hfill \@signatureplace \\
+          & \smallskip Darbo vadovas: \\
+          & \medskip \@supervisor \hfill  \@signatureplace \\
+          & \smallskip Recenzentas: \\
+          & \@reviewer \hfill  \@signatureplace
         \end{tabular} \par}%
      \end{flushright}
-     \vskip 4cm
+     \vskip 2.9cm
    }{
-     \vskip 2.8cm
+     \vskip 4.4cm
      \begin{flushright}
-        \large
         \singlespacing
         {\begin{tabular}[t]{l l}%
-        \bigskip Atliko: &\; \@author \hfill \@signatureplace \\
-        \bigskip &\; \@secondauthor \hfill \@signatureplace \\
-        \bigskip Darbo vadovas: &\; \@supervisor \hfill  \@signatureplace \\
-        Recenzentas: &\; \@reviewer \hfill \@signatureplace
+          \smallskip & Atliko: \@status \\
+          \bigskip & \@author \hfill \@signatureplace \\
+          \bigskip & \@secondauthor \hfill \@signatureplace \\
+          & \smallskip Darbo vadovas: \\
+          & \bigskip \@supervisor \hfill  \@signatureplace \\
+          & \smallskip Recenzentas: \\
+          & \@reviewer \hfill  \@signatureplace
         \end{tabular} \par}%
      \end{flushright}
-     \vskip 3.8cm
+     \vskip 3cm
    }
-
   \begin{center}
     {\singlespacing \@date \par}%   
   \end{center}\par
