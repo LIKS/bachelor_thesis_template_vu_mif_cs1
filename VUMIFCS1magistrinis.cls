@@ -13,7 +13,9 @@
 
 % Magistro darbo apiforminimas pagal Vilniaus universiteto
 % Matematikos ir informatikos fakulteto Informatikos katedros reikalavimus
-\ProvidesPackage{VUMIFCS1magistrinis}[2014/12/24 1.0 VU MIF CS1 master thesis style]
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{VUMIFCS1magistrinis}[2014/12/24 1.0 VU MIF CS1 master thesis class]
+\LoadClass[12pt, a4paper]{article}
 \RequirePackage{LTPlius}  % Nustatymų sulietuvinimas
 \RequirePackage{fontspec} % Šrifto pasirinkimui
 \setmainfont[
