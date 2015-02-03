@@ -1,5 +1,5 @@
-%% VUMIFCS1magistrinis.sty
-%% Created by  Laurynas Biveinis, Albertas Gimbutas  2014
+%% VUMIFCS1magistrinis.cls – „Tik svajotojai-romantikai gali pagerinti nepakeičiamą pasaulį“
+%% Created by   Atviras Kodas Lietuvai  2015
 %
 %% Latest version available here: https://github.com/LIKS/course_work_template_mifcs1
 %% Any suggestions or contributions are welcome!  Also see: http://latex.liks.lt!
@@ -14,7 +14,7 @@
 % Magistro darbo apiforminimas pagal Vilniaus universiteto
 % Matematikos ir informatikos fakulteto Informatikos katedros reikalavimus
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{VUMIFCS1magistrinis}[2014/12/24 1.0 VU MIF CS1 master thesis class]
+\ProvidesClass{VUMIFCS1magistrinis}[2015/02/03 1.0 VU MIF CS1 master thesis class]
 \LoadClass[12pt, a4paper]{article}
 \RequirePackage{LTPlius}  % Nustatymų sulietuvinimas
 \RequirePackage{fontspec} % Šrifto pasirinkimui
