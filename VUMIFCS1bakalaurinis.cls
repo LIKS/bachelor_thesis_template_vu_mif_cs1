@@ -247,15 +247,6 @@
     \renewcommand{\refname}{Literat\={u}ros s\k{a}ra\v{s}as}%
 }
 
-% Literatūros sąrašą įtraukiame į turinį, nustatome jo stilių
-\let\oldbibliography\bibliography
-\renewcommand{\bibliography}[1]{%
-    \cleardoublepage%
-    \addcontentsline{toc}{section}{\refname}%}
-    \bibliographystyle{alpha}%
-    \oldbibliography{#1}%
-}
-
 % Apibrėžiame ketvirto lygio skyrius
 \newcommand{\subsubsubsection}{\subsubparagraph}
 
