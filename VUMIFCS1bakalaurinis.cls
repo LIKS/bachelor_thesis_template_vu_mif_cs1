@@ -1,5 +1,5 @@
 %% VUMIFCS1bakalaurinis.cls – „Tik svajotojai-romantikai gali pagerinti nepakeičiamą pasaulį“
-%% Created by   Atviras Kodas Lietuvai  2015
+%% Created by   „Atviras Kodas Lietuvai“  2015
 %
 %% Latest version available here: https://github.com/LIKS/course_work_template_mifcs1
 %% Any suggestions or contributions are welcome!  Also see: http://latex.liks.lt!
@@ -60,6 +60,19 @@
 % Pirmos eilutės paragrafe atitraukimas 0,7 cm
 \setlength{\parindent}{0.7cm}
 
+% Bibliografijos stilius
+\RequirePackage[
+    alldates=iso8601,
+    autolang=other,
+    backend=biber,
+    sortcites=true,
+    style=alphabetic,
+    minalphanames=3,
+    maxnames=9,
+    minnames=4,
+]{biblatex}
+\RequirePackage{csquotes}
+\renewcommand*{\labelalphaothers}{\textsuperscript{+}}
 
 % -------------------------------
 % Titulinio puslapio formatavimas
@@ -279,3 +292,5 @@
     % \hangindent=\parindent   % Lygiavimas nuo antros eilutės
     \noindent \textbf{Raktiniai žodžiai:}\; \textbf{#1}
 }
+
+
