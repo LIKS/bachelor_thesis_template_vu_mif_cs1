@@ -38,6 +38,7 @@
 \sloppy  % Tolygiai paskirsto tekstą nuo kairės iki dešinės paraštės
 \RequirePackage[titles]{tocloft} % Turinio eilučių išlygiavimo nustatymui
 \RequirePackage{fancyhdr} % Puslapio numerio vietos nustatymui
+\setlength{\headheight}{14.5pt} 
 \pagestyle{fancy}
 
 % Nustatoma puslapio numerio vieta puslapyje
@@ -49,6 +50,15 @@
 \lfoot{}
 \cfoot{}
 \rfoot{}
+
+% Nerodyti įspėjimo dėl pakeistos article klasės antraščių stiliaus
+\RequirePackage{silence}
+\WarningFilter{caption}{Unsupported document class}
+
+% Po lentelės antraštės prefiksu bus dedamas taškas
+\RequirePackage{caption}
+\captionsetup*[table]{labelsep=period}
+\captionsetup*[figure]{labelsep=period, name=pav}
 
 % Informacijos tituliniame puslapyje kintamieji
 \newcommand{\university}[1]{\def\@university{#1}}
@@ -77,7 +87,7 @@
     maxnames=9,
     minnames=4,
 ]{biblatex}
-\RequirePackage{csquotes}
+\RequirePackage[style=lithuanian]{csquotes}
 % Pliuso ženklas, kuris rodomas esant >3 autoriams, sumažinamas ir pakeliamas
 \renewcommand*{\labelalphaothers}{\textsuperscript{+}}
 
