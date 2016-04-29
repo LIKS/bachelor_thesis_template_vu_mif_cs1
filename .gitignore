@@ -1,0 +1,19 @@
+# media cache files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+# temporary files
+*~
+*.log
+*.tmp
+*.swp
+*.bak
+*.toc
+*.run.xml
+*.blg
+*.bcf
+*.bbl
+*.aux
+
+
