@@ -65,6 +65,7 @@
 \newcommand{\faculty}[1]{\def\@faculty{#1}}
 \newcommand{\papertype}[1]{\def\@papertype{#1}}
 \newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\institute}[1]{\def\@institute{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand{\reviewer}[1]{\def\@reviewer{#1}}
 \newcommand{\status}[1]{\def\@status{#1}}
@@ -116,6 +117,9 @@
   \begin{center}
       {\singlespacing \MakeUppercase{\@university} \\
                       \MakeUppercase{\@faculty} \\
+                      \ifdefined\@institute
+                          \MakeUppercase{\@institute} \\
+                      \fi
                       \MakeUppercase{\@department}\par }
       \null\vfil
       \vskip 3.4cm
@@ -170,6 +174,7 @@
   \global\let\@university\@empty
   \global\let\@faculty\@empty
   \global\let\@department\@empty
+  \global\let\@institute\@empty
   \global\let\@papertype\@empty
   \global\let\@supervisor\@empty
   \global\let\@reviewer\@empty
